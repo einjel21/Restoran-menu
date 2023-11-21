@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Restoran menu mobile</title>
+        <link rel="icon" type="image/png" href="img/Rectangle.png" />
+        <link rel="stylesheet" href="css/mobile.css" />
+    </head>
+<body>
+    <div class="iphone-pro-max">
+        <div class="div">
+            <img class="ellipse" src="img/Rectangle.png" />
+            <div class="text-wrapper">Hi!</div>
+            <div class="overlap">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Search menu" onkeypress="searchKeyPress(event)">
+                    <img class="search" src="img/Search.png" alt="Search">
+                </div>
+            </div>  
+            <div class="text-wrapper-3">Find your food!</div>
+            <div class="overlap-group">
+                <select class="select-box" onchange="showImage(this.value)">
+                    <option value="" disabled selected>PILIH MENU</option>
+                    <option value="Nasi Putih" class="styled-option">Nasi Putih</option>
+                    <option value="Bakmi ayam" class="styled-option">Bakmi ayam</option>
+                    <option value="Basko Sapi" class="styled-option">Basko Sapi</option>
+                    <option value="Ayam Geprek" class="styled-option">Ayam Geprek</option>
+                </select>
+            </div>
+
+            <div class="menu-image" id="image-Nasi Putih" style="display: none;">
+                <img class="img" src="img/nasi.jpg" alt="Nasi Putih">
+            </div>
+            <div class="menu-image" id="image-Bakmi ayam" style="display: none;">
+                <img class="img" src="img/mie ayam.jpg" alt="Bakmi ayam">
+            </div>
+            <div class="menu-image" id="image-Basko Sapi" style="display: none;">
+                <img class="img" src="img/bakso.jpg" alt="Basko Sapi">
+            </div>
+            <div class="menu-image" id="image-Ayam Geprek" style="display: none;">
+                <img class="img" src="img/ayam.jpg" alt="Ayam Geprek">
+            </div>
+
+            <div id="popup" class="popup">
+                <span class="popup-close" onclick="closePopup()">&times;</span>
+                <img id="popup-image" src="" alt="Food Image">
+            </div>
+
+            <div class="div-wrapper">
+                <select class="select-box">
+                    <option value="" disabled selected>BAKMI</option>
+                    <option value="all" class="styled-option">Bakmi ayam</option>
+                </select>
+            </div>
+
+            <div class="overlap-2">
+                <select class="select-box">
+                    <option value="" disabled selected>NASI</option>
+                    <option value="all" class="styled-option">Nasi Putih</option>
+                </select>
+            </div>
+
+            <div class="overlap-3">
+                <select class="select-box">
+                    <option value="" disabled selected>BAKSO</option>
+                    <option value="all" class="styled-option">Basko Sapi</option>
+                </select>
+            </div>
+
+            <div class="overlap-4">
+                <select class="select-box">
+                    <option value="" disabled selected>AYAM</option>
+                    <option value="all" class="styled-option">Ayam goreng</option>
+                </select>
+            </div>
+            <div class="pizza"><img class="rectangle8" src="img/pizza2.png" /></div>
+            <div class="overlap-5"><div class="text-wrapper-7">Pizza</div></div>
+            <div class="siomay"><img class="rectangle7" src="img/siomay1.png" /></div>
+            <div class="overlap-6"><div class="text-wrapper-8">Gado - Gado</div></div>
+            <img class="rectangle" src="img/spageti2.png" />
+            <img class="img" src="img/bakso2.png" />
+            <div class="overlap-7">
+                <div class="box"><img class="rectangle12" src="img/rectangle12.png" /></div>
+                <div class="text-wrapper-9">FYI!</div>
+                <p class="p">Pizza is a favorite food every year and has the appeal of a variety of toppings.</p>
+            </div>
+            <div class="overlap-8">
+                <a href="#" onclick="performPayment()">
+                    <img class="iconly-bold-wallet" src="img/wallet.png" alt="Wallet" />
+                </a>                    
+                <a href="index.html">
+                    <img class="iconly-bold-home" src="img/home.png" alt="Home" />
+                </a>
+                <a href="#" class="history-link" onclick="showPaymentHistory()">
+                    <img class="history" src="img/document.png" alt="History" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="total-payment">
+        <p>Total Payment: <span id="totalAmount"></span></p>
+    </div> 
+    <div id="paymentMessage" class="payment-message">
+        <p id="paymentMessageText"></p>
+    </div>
+           
+    <script src="js/mobile.js"></script>
+
+    <div id="history-popup" class="popup">
+        <span class="popup-close" onclick="closeHistoryPopup()">&times;</span>
+        <div id="history-content"></div>
+    </div>
+</body>
+</html>
